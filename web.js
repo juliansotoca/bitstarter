@@ -3,7 +3,8 @@ var app = express();
 app.use(express.logger());
 
 app.get('/', function(request, response) {
-  response.send('Hello Spain');
+  index=fs.readFile('index.html');
+  response.send(index.toString('utf-8'));
 });
 
 var port = process.env.PORT || 5000;
